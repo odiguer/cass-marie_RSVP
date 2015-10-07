@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'static_pages/event'
+
+  get 'static_pages/wedding_party'
+
+  get 'static_pages/travel'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
