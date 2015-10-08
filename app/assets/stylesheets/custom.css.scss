@@ -11,57 +11,133 @@ body {
 }
 
 html, body, .container-fluid {
-   height: 100%;
+  height: 100%;
 
-   .container-fluid {
-       display: table;
-   }
-}
-
-.vertical-center-row {
-    display: table-cell;
+    /* Home page vertically center the fucking title */
+  .container-table {
+    display: table;
     vertical-align: middle;
+
+    .vertical-center-row {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
 }
 
+/* Where the wedded people's names go */
 .home-title-area {
-   h1 {
-      font-family: "Voltaire",Georgia,serif;
-      font-weight: 400;
-      font-size: 115px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-family: "Lato";
-      font-size: 90px;
-      line-height: 1em;
-      text-transform: none;
-      text-decoration: none;
-      letter-spacing: 0px;
-      font-weight: 100;
-      font-style: normal;
-      color: #1a1a1a;
-      margin: 0 0 28px;
-      text-align: center;
-      display: inline-block;
-      width: 100%;
+  h1 {
+    font-family: "Voltaire",Georgia,serif;
+    font-weight: 400;
+    font-size: 115px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-size: 90px;
+    line-height: 1em;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    font-weight: 100;
+    font-style: normal;
+    color: #1a1a1a;
+    margin: 0 0 28px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
 
-      p{
-        font-family: Georgia,serif;
-        font-weight: 400;
-        font-style: italic;
+    p{
+      font-family: Georgia,serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 21px;
+      text-transform: none;
+      letter-spacing: 0px;
+      font-family: "Lato";
+      font-size: 20px;
+      line-height: 1.4em;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 3px;
+      font-weight: 300;
+      font-style: normal;
+      color: rgba(28,28,28,.9);
+      text-align: center;
+      margin-bottom: 0px;
+
+      @media (max-width: $screen-md-min) {
         font-size: 21px;
-        text-transform: none;
-        letter-spacing: 0px;
-        font-family: "Lato";
-        font-size: 20px;
-        line-height: 1.4em;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 3px;
-        font-weight: 300;
-        font-style: normal;
-        color: rgba(28,28,28,.9);
-        text-align: center;
-        margin-bottom: 0px;
       }
+      @media (max-width: $screen-sm-min) {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: $screen-md-min) {
+      font-size: 60px;
+    }
+    @media (max-width: $screen-sm-min) {
+      font-size: 30px;
+    }
   }
+}
+
+.bs-panel {
+  margin-right: 0;
+  margin-left: 0;
+  // background-color: #fff;
+  background: rgba(0,0,0, 0.05);
+  border-color: #ddd;
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  min-height: 500px;
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+}
+
+.info {
+  padding-bottom: 30px;
+}
+.info-border-top{
+  padding-top: 30px;
+  border-top: solid 2px;
+  border-color: white;
+}
+
+/* Make vertical thumbnails */
+.thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px;
+}
+.thumbnail.right-caption {
+    float: left;
+}
+.thumbnail.right-caption > .caption {
+    padding: 4px;
+}
+
+
+/* Flexible iFrame for the embedded google maps. */
+.flexible-container {
+  position: relative;
+  padding-bottom: 100%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.flexible-container iframe,
+.flexible-container object,
+.flexible-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
