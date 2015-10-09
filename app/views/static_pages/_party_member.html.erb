@@ -1,0 +1,35 @@
+<%
+#class_txt = ""
+class_txt = "info-border-top" if include_border_top
+%>
+<div class="row <%= raw class_txt %>">
+  <% if even %>
+  <div class="col-lg-4">
+    <a href="#" class="thumbnail">
+      <img src="<%= pic_url %>" alt="">
+    </a>
+  </div>
+  <div class="col-lg-8 text-right">
+    <div class="info">
+      <h2>
+        <%= raw name %> <br>
+        <small><%= raw title %></small>
+      </h2>
+    </div>
+  </div>
+  <% else %>
+  <div class="col-lg-8">
+    <div class="info">
+      <h2>
+        <%= raw name %> <br>
+        <small><%= raw title %></small>
+      </h2>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <a href="#" class="thumbnail">
+      <img src="<%= pic_url %>" alt="">
+    </a>
+  </div>
+  <% end %>
+</div>
