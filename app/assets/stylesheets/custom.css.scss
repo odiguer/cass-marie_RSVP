@@ -34,7 +34,7 @@ html, body, .container-fluid {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: "Lato";
-    font-size: 90px;
+    font-size: 80px;
     line-height: 1em;
     text-transform: none;
     text-decoration: none;
@@ -127,7 +127,7 @@ html, body, .container-fluid {
 .flexible-container {
   position: relative;
   padding-bottom: 100%;
-  padding-top: 30px;
+  margin-bottom:30px;
   height: 0;
   overflow: hidden;
 }
