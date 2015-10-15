@@ -1,9 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+  
+@font-face {
+    font-family: 'LatoWebThin';
+    src: url('Lato-Thin.eot'); /* IE9 Compat Modes */
+    src: url('Lato-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Lato-Thin.woff2') format('woff2'), /* Modern Browsers */
+         url('Lato-Thin.woff') format('woff'), /* Modern Browsers */
+         url('Lato-Thin.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
 
 body {
   padding-top: 60px;
-  background-image: url("http://static.squarespace.com/static/53c827a3e4b00a63fc062eb5/t/53e162a3e4b08ac0a8ecac68/1407279779644/DSC07168.jpg");
+  /*background-image: url("http://static.squarespace.com/static/53c827a3e4b00a63fc062eb5/t/53e162a3e4b08ac0a8ecac68/1407279779644/DSC07168.jpg");*/
+  background-image: url('background.jpg');
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -86,7 +99,6 @@ html, body, .container-fluid {
 .bs-panel {
   margin-right: 0;
   margin-left: 0;
-  // background-color: #fff;
   background: rgba(0,0,0, 0.05);
   border-color: #ddd;
   border-width: 1px;
