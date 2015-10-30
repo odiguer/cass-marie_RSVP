@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
+  get 'users/update'
+
   root 'static_pages#home'
   get 'wedding_party' => 'static_pages#wedding_party'
   get 'event' => 'static_pages#event'
