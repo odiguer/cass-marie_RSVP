@@ -32,16 +32,34 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Cortège",   wedding_party_path %></li>
-          <li><%= link_to "Evenements",   event_path %></li>
+          <li><%= link_to "Cortège", wedding_party_path %></li>
+          <li><%= link_to "Evenements", event_path %></li>
           <li><%= link_to "Logement", travel_path %></li>
           <li><a href="#">RSVP</a></li>
+          <% if logged_in?  %>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Invités</a></li>
+          <li><a href="#">Bouffe</a></li>
+          <li><a href="#">Raport</a></li>
+          <% end %>
         </ul>
+
+        <% if logged_in?  %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Log-Out", logout_path, method: :delete%></li>
+        </ul>
+        <p class="navbar-text navbar-right text-primary">
+          <small>Signed in as <%= "#{current_user.first_name} #{current_user.last_name}" %></small>
+        </p>
+        <% end %>
       </div>
     </div>
   </nav>
 
   <div class="container-fluid">
+    <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
   </div>
 
