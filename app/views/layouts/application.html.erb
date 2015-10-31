@@ -41,17 +41,22 @@
     </div>
   </nav>
 
-<div class="container-fluid">
-  <%= yield %>
-</div>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+
+  <% if Rails.env.development? %>
+  <div class="container" style="margin-top:-90px">
+    <div class='row'>
+      <div class='col-lg-12'>
+        <%= debug(params) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </body>
 
-<!-- <footer class="footer">
-  <small>
-    Olivier Diguer-St-Amant
-  </small>
-  <% if Rails.env.development? %>
-  <%= debug(params) %>
-  <% end %>
-</footer> -->
+<footer class="footer">
+
+</footer>
 </html>
