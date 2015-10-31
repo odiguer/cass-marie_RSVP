@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'foodstuff/list'
+
+  get 'foodstuff/load'
+
+  get 'foodstuff/create'
+
   get 'guest/create'
 
   get 'guest/list'
