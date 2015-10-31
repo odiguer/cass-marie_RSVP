@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'guest/create'
+
+  get 'guest/list'
+
+  get 'guest/load'
+
+  get 'guest/delete'
+
   get 'users/new'
 
   get 'users/update'
