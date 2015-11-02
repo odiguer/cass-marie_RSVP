@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'users/update'
 
+  resources:foodstuffs, :except => :show
 end

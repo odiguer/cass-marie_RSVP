@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in user.id
-      redirect_to root_url
+      redirect_back_or root_url
     else
       flash.now[:danger] = 'Invalid email/password'
       render 'new'
