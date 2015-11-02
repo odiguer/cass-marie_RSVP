@@ -2,15 +2,15 @@
 @import "bootstrap";
 
 @font-face {
-    font-family: 'LatoWebThin';
-    src: url('Lato-Thin.eot'); /* IE9 Compat Modes */
-    src: url('Lato-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('Lato-Thin.woff2') format('woff2'), /* Modern Browsers */
-         url('Lato-Thin.woff') format('woff'), /* Modern Browsers */
-         url('Lato-Thin.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+  font-family: 'LatoWebThin';
+  src: url('Lato-Thin.eot'); /* IE9 Compat Modes */
+  src: url('Lato-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('Lato-Thin.woff2') format('woff2'), /* Modern Browsers */
+  url('Lato-Thin.woff') format('woff'), /* Modern Browsers */
+  url('Lato-Thin.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 html, body, .container-fluid {
   height: 100%;
 
-    /* Home page vertically center the fucking title */
+  /* Home page vertically center the fucking title */
   .container-table {
     display: table;
     vertical-align: middle;
@@ -124,14 +124,14 @@ html, body, .container-fluid {
 
 /* Make vertical thumbnails */
 .thumbnail.right-caption > img {
-    float: left;
-    margin-right: 9px;
+  float: left;
+  margin-right: 9px;
 }
 .thumbnail.right-caption {
-    float: left;
+  float: left;
 }
 .thumbnail.right-caption > .caption {
-    padding: 4px;
+  padding: 4px;
 }
 
 
@@ -168,4 +168,19 @@ html, body, .container-fluid {
 }
 .text-danger{
   color:#d9534f !important;
+}
+
+#error_summary {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors{
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

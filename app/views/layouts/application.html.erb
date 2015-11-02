@@ -39,7 +39,7 @@
           <% if logged_in?  %>
           <li role="separator" class="divider"></li>
           <li><a href="#">Invités</a></li>
-          <li><a href="#">Bouffe</a></li>
+          <li><%= link_to "Bouffe", foodstuffs_path %></li>
           <li><a href="#">Raport</a></li>
           <% end %>
         </ul>
@@ -51,6 +51,10 @@
         <p class="navbar-text navbar-right text-primary">
           <small>Signed in as <%= "#{current_user.first_name} #{current_user.last_name}" %></small>
         </p>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Log-In", login_path %></li>
+        </ul>
         <% end %>
       </div>
     </div>
@@ -58,23 +62,27 @@
 
   <div class="container-fluid">
     <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <%= yield %>
-  </div>
+    <div class="alert alert-<%= message_type %> alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
 
-  <% if Rails.env.development? %>
-  <div class="container" style="margin-top:-90px">
-    <div class='row'>
-      <div class='col-lg-12'>
-        <%= debug(params) %>
+    <% if Rails.env.development? %>
+    <div class="container" style="margin-top:-90px">
+      <div class='row'>
+        <div class='col-lg-12'>
+          <%= debug(params) %>
+        </div>
       </div>
     </div>
-  </div>
-  <% end %>
-</body>
+    <% end %>
+  </body>
 
-<footer class="footer">
+  <footer class="footer">
 
-</footer>
-</html>
+  </footer>
+  </html>
