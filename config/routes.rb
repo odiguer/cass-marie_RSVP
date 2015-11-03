@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'guests/new'
+
+  get 'guests/create'
+
+  get 'guests/update'
+
+  get 'guests/edit'
+
+  get 'guests/destroy'
+
+  get 'guests/index'
+
   root 'static_pages#home'
   get 'wedding_party' => 'static_pages#wedding_party'
   get 'event' => 'static_pages#event'
@@ -15,8 +27,6 @@ Rails.application.routes.draw do
   get 'guest/create'
   get 'guest/list'
   get 'guest/load'
-  get 'guest/delete'
-
   get 'users/new'
   get 'users/update'
 
