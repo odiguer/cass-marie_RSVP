@@ -26,6 +26,6 @@ module CassMarieWeb
     #serve crap in the fonts folder as part of the assets pipeline.
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.compile = true
   end
 end
