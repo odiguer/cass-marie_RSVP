@@ -8,15 +8,12 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  get 'foodstuff/list'
-  get 'foodstuff/load'
-  get 'foodstuff/create'
-
-  get 'guest/create'
-  get 'guest/list'
-  get 'guest/load'
-  get 'users/new'
-  get 'users/update'
+  #RSVP
+  get 'rsvp' => 'rsvp#find'
+  # get 'rsvp/new'
+  # post 'rsvp/create'
+  # get 'rsvp/edit'
+  # post 'rsvp/update'
 
   resources:foodstuffs, :except => [:show, :destroy]
   resources:guests, :except => :show
