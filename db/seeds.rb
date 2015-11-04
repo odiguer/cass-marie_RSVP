@@ -17,6 +17,13 @@ User.create!(email: "oli.diguer@foobar.com",
   password_confirmation: password)
 end
 
+##Guests
+10.times do |n|
+  first_name  = Faker::Name.first_name
+  last_name  = Faker::Name.last_name
+  Guest.create!(first_name:  first_name,  last_name: last_name)
+end
+
 ## Foodstuff
 3.times do |n|
   Foodstuff.create!(foodstuff_name:  Faker::Lorem.word.titleize, foodstuff_description: Faker::Lorem.sentences.join(' '))

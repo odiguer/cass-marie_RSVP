@@ -1,7 +1,7 @@
 class FoodstuffsController < ApplicationController
   before_action :logged_in_user
   def index
-    @foodstuffs = Foodstuff.all
+    @foodstuffs = Foodstuff.all.order('foodstuff_name ASC')
   end
 
   def new
@@ -12,7 +12,7 @@ class FoodstuffsController < ApplicationController
     @foodstuff = Foodstuff.new(user_params)
     if @foodstuff.save
       flash[:success] = "Foodstuff succesfully added."
-      redirect_to @foodstuff
+      redirect_to action: :index
     else
       render 'new'
     end

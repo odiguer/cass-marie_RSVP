@@ -18,6 +18,12 @@ class FoodstuffsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should redirect to index after create" do
+    log_in_as @user
+    post :create, foodstuff: {foodstuff_name: "Beef", foodstuff_description: "This is delicious"}
+    assert_redirected_to foodstuffs_path
+  end
+
   test "should get edit" do
     log_in_as @user
     get :edit, id: @foodstuff

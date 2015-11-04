@@ -1,2 +1,20 @@
-<h1>Guests#index</h1>
-<p>Find me in app/views/guests/index.html.erb</p>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Invités</h1>
+    <table class="table table-condensed table-striped">
+      <thead>
+        <th>Nom d'invité</th>
+      </thead>
+      <tbody>
+        <% @guests.each do |guest| %>
+        <tr>
+          <td><%= link_to "#{guest.first_name} #{guest.last_name}", edit_guest_path(guest) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "Nouveau Invité", new_guest_path, class: "btn btn-primary" %>
+  </div>
+</div>
