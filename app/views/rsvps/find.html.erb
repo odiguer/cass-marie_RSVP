@@ -1,0 +1,18 @@
+<%= render 'layouts/wedded_people_header' %>
+
+<div class="row vertical-center-row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 home-title-area">
+
+    <p class="site-tagline text-cente"> Entré le nom sur votre invitation</p>
+
+    <%= form_tag locate_rsvps_path do %>
+    <div class="input-group">
+      <%= text_field_tag "rsvp_name_query", nil, class:"form-control input", placeholder: "par ex. Jane Doe", required: true %>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">Trouver RSVP</button>
+      </span>
+    </div>
+    <% end %>
+
+  </div>
+</div>
