@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  #RSVP
-  # get 'rsvp' => 'rsvp#find'
-  # post 'rsvp_locate' => 'rsvp#locate'
-  # get 'rsvp_edit' => 'rsvp#edit'
-
   resources:foodstuffs, :except => [:show, :destroy]
   resources:guests, :except => :show
 

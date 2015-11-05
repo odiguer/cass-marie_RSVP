@@ -39,6 +39,6 @@ class GuestsController < ApplicationController
   private
   def user_params
     params.require(:guest)
-    .permit(:first_name, :last_name)
+    .permit(:first_name, :last_name, :foodstuff_id, :additional_comment)
   end
 end

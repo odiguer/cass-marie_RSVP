@@ -6,7 +6,7 @@ class RsvpsController < ApplicationController
 
   def locate
     if params[:rsvp_name_query].blank?
-      flash[:danger] = "Please enter a name."
+      flash.now[:danger] = "Please enter a name."
       return render 'find'
     end
 
@@ -14,7 +14,7 @@ class RsvpsController < ApplicationController
     if @guests.length > 0
       redirect_to action: :edit, id: @guests[0].id
     else
-      flash[:danger] = "RSVP not found"
+      flash.now[:danger] = "RSVP not found"
       render 'find'
     end
   end
