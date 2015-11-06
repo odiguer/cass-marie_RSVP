@@ -2,7 +2,7 @@ class GuestsController < ApplicationController
   before_action :logged_in_user
 
   def index
-    @guests = Guest.all.order('first_name ASC')
+    @guests = Guest.all.order('full_name ASC')
   end
 
   def new
@@ -39,6 +39,6 @@ class GuestsController < ApplicationController
   private
   def user_params
     params.require(:guest)
-    .permit(:first_name, :last_name, :foodstuff_id, :additional_comment)
+    .permit(:full_name, :foodstuff_id, :additional_comment, :attending_ind)
   end
 end

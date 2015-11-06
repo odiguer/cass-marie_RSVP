@@ -18,10 +18,9 @@ User.create!(email: "oli.diguer@foobar.com",
 end
 
 ##Guests
-10.times do |n|
-  first_name  = Faker::Name.first_name
-  last_name  = Faker::Name.last_name
-  Guest.create!(first_name:  first_name,  last_name: last_name)
+30.times do |n|
+  full_name  = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
+  Guest.create!(full_name:  full_name)
 end
 
 ## Foodstuff

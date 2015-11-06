@@ -1,7 +1,7 @@
 <%= render 'layouts/wedded_people_header' %>
 <div class="row vertical-center-row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 home-title-area">
-    <p class="site-tagline text-center"> RSVP pour <%= "#{@guest.first_name} #{@guest.last_name}"%></p>
+    <p class="site-tagline text-center"> RSVP pour <%= "#{@guest.full_name}"%></p>
     <small class="text-center text-muted"><%= link_to "(Ceci n'est pas votre invitation? Clicker ici pour faire une nouvelle recherche)", find_rsvps_path %></small>
 
     <%= form_for(@guest, :url => rsvp_path(@guest)) do |f| %>

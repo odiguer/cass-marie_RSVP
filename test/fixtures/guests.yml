@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: Guest
-  last_name: One
+  full_name: Guest One
 
 two:
-  first_name: Guest
-  last_name: Two
+  full_name: Guest Two

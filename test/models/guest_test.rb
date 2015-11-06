@@ -2,16 +2,11 @@ require 'test_helper'
 
 class GuestTest < ActiveSupport::TestCase
   def setup
-    @guest = Guest.new(first_name: "Gandalf", last_name: "balbazar")
+    @guest = Guest.new(full_name: "Gandalf balbazar")
   end
 
-  test "first_name should be present" do
-    @guest.first_name = "   "
-    assert_not @guest.valid?
-  end
-
-  test "last_name should be present" do
-    @guest.last_name = "   "
+  test "full_name should be present" do
+    @guest.full_name = "   "
     assert_not @guest.valid?
   end
 end

@@ -10,7 +10,7 @@
       <tbody>
         <% @guests.each do |guest| %>
         <tr>
-          <td><%= link_to "#{guest.first_name} #{guest.last_name}", edit_guest_path(guest) %></td>
+          <td><%= link_to "#{guest.full_name}", edit_guest_path(guest) %></td>
         </tr>
         <% end %>
       </tbody>

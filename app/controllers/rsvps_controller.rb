@@ -10,7 +10,7 @@ class RsvpsController < ApplicationController
       return render 'find'
     end
 
-    @guests = Guest.where("lower(first_name || ' ' || last_name) LIKE ?", "%#{params[:rsvp_name_query]}%")
+    @guests = Guest.where("full_name LIKE ?", "%#{params[:rsvp_name_query]}%")
     if @guests.length > 0
       redirect_to action: :edit, id: @guests[0].id
     else
@@ -36,6 +36,6 @@ class RsvpsController < ApplicationController
   private
   def user_params
     params.require(:guest)
-    .permit(:foodstuff_id, :additional_comment)
+    .permit(:foodstuff_id, :additional_comment, :attending_ind)
   end
 end
