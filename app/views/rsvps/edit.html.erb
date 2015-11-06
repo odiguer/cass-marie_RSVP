@@ -1,3 +1,24 @@
+<% content_for :head do %>
+<script type="text/javascript">
+$(document).ready(function(){
+  toggleEnabled();
+  $('#cboAttendingInd').change(function(){
+    toggleEnabled();
+  });
+
+  function toggleEnabled(){
+    if ($( "#cboAttendingInd option:selected" ).val() == 'true'){
+      $('#cboFoodstuff').removeAttr('disabled');
+      $('#txtAdditionalComment').removeAttr('disabled');
+    }else{
+      $('#cboFoodstuff').attr('disabled', '');
+      $('#txtAdditionalComment').attr('disabled', '').text('');
+    }
+  }
+});
+</script>
+<% end %>
+
 <%= render 'layouts/wedded_people_header' %>
 <div class="row vertical-center-row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 home-title-area">
@@ -8,17 +29,18 @@
     <%= render 'shared/error_messages', obj: @guest %>
 
     <div class="form-group">
-      <%= f.label :foodstuff %><br />
-      <%= f.select :foodstuff_id, Foodstuff.all.collect {|foodstuff| [ foodstuff.foodstuff_name, foodstuff.id ]}, {}, class: "form-control" %>
+      <%= f.label :attending_ind, "Allez vous assister a l'événement?" %>
+      <%= f.select :attending_ind, [['Oui', true], ['Non', false]], {}, id: "cboAttendingInd", class: 'form-control'%>
     </div>
     <div class="form-group">
-      <%= f.label :additional_comment %>
-      <%= f.text_area :additional_comment, class: 'form-control' %>
+      <%= f.label :foodstuff, "Choix de repas" %><br />
+      <%= f.select :foodstuff_id, Foodstuff.all.collect {|foodstuff| [ foodstuff.foodstuff_name, foodstuff.id ]}, {}, id: "cboFoodstuff", class: "form-control", disabled: "" %>
     </div>
     <div class="form-group">
-      <%= f.label :attending_ind %>
-      <%= f.select :attending_ind, [['Oui', true], ['Non', false]], {}, class: 'form-control'%>
+      <%= f.label :additional_comment, "Information Additionnelle (par ex. Alergies)" %>
+      <%= f.text_area :additional_comment, id: "txtAdditionalComment", class: 'form-control', disabled: "" %>
     </div>
+
     <%= f.submit "Soumettre RSVP", class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
