@@ -1,18 +1,22 @@
 <h1>Bouffe</h1>
 
-<table class="table table-condensed table-striped">
-  <thead>
-    <th>Bouffe</th>
-    <th>Bouffe Description</th>
-  </thead>
-  <tbody>
-    <% @foodstuffs.each do |foodstuff| %>
-    <tr>
-      <td><%= link_to foodstuff.foodstuff_name, edit_foodstuff_path(foodstuff) %></td>
-      <td><%= foodstuff.foodstuff_description %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "Nouvelle bouffe!", new_foodstuff_path, class: "btn btn-primary" %>
+<div class="panel panel-default">
+  <div class="panel-heading">Invités</div>
+  <table class="table table-condensed table-striped">
+    <thead>
+      <th>Bouffe</th>
+      <th>Bouffe Description</th>
+    </thead>
+    <tbody>
+      <% @foodstuffs.each do |foodstuff| %>
+      <tr>
+        <td><%= link_to foodstuff.foodstuff_name, edit_foodstuff_path(foodstuff) %></td>
+        <td><%= foodstuff.foodstuff_description %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="panel-footer">
+    <%= link_to "Nouvelle bouffe", new_foodstuff_path, class: "btn btn-primary" %>
+  </div>
+</div>

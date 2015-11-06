@@ -5,8 +5,8 @@ class RsvpsController < ApplicationController
   end
 
   def locate
-    if params[:rsvp_name_query].blank?
-      flash.now[:danger] = "Please enter a name."
+    if params[:rsvp_name_query].blank? || params[:rsvp_name_query].length < 4
+      flash.now[:warning] = "Veuillez entrer un nom"
       return render 'find'
     end
 
@@ -14,7 +14,7 @@ class RsvpsController < ApplicationController
     if @guests.length > 0
       redirect_to action: :edit, id: @guests[0].id
     else
-      flash.now[:danger] = "RSVP not found"
+      flash.now[:danger] = "Aucun RSVP n'a été trouvé pour ce nom"
       render 'find'
     end
   end
@@ -26,7 +26,7 @@ class RsvpsController < ApplicationController
   def update
     @guest = Guest.find(params[:id])
     if @guest.update_attributes(user_params)
-      flash[:success] = "Thank you"
+      flash[:success] = "Votre RSVP a été mis à jour. Merci"
       redirect_to action: :find
     else
       render 'edit'
