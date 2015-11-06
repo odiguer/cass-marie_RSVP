@@ -14,7 +14,7 @@ class RsvpsController < ApplicationController
     if @guests.length > 0
       redirect_to action: :edit, id: @guests[0].id
     else
-      flash.now[:danger] = "Aucun RSVP n'a été trouvé pour ce nom"
+      flash.now[:danger] = "Aucun RSVP n'a été trouvé pour ce nom; veuillez vérifier votre saisie et réessayer."
       render 'find'
     end
   end
