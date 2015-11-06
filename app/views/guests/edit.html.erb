@@ -17,7 +17,11 @@
       <%= f.label :additional_comment %>
       <%= f.text_area :additional_comment, class: 'form-control' %>
     </div>
-    <%= f.submit "Update", class: "btn btn-primary" %>
+    <div class="form-group">
+      <%= f.label :attending_ind %>
+      <%= f.select :attending_ind, [['Oui', true], ['Non', false]], {}, class: 'form-control'%>
+    </div>
+    <%= f.submit "Update", class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
 </div>
