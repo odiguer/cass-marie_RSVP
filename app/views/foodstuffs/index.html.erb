@@ -1,11 +1,9 @@
-<h1>Bouffe</h1>
-
 <div class="panel panel-default">
-  <div class="panel-heading">Invités</div>
+  <div class="panel-heading">Repas</div>
   <table class="table table-condensed table-striped">
     <thead>
-      <th>Bouffe</th>
-      <th>Bouffe Description</th>
+      <th>Repas</th>
+      <th>Description</th>
     </thead>
     <tbody>
       <% @foodstuffs.each do |foodstuff| %>
@@ -17,6 +15,6 @@
     </tbody>
   </table>
   <div class="panel-footer">
-    <%= link_to "Nouvelle bouffe", new_foodstuff_path, class: "btn btn-primary" %>
+    <%= link_to "Nouveau repas", new_foodstuff_path, class: "btn btn-primary" %>
   </div>
 </div>

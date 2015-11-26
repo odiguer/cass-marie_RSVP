@@ -37,7 +37,7 @@ $(document).ready(function(){
       <%= f.select :foodstuff_id, Foodstuff.all.collect {|foodstuff| [ foodstuff.foodstuff_name, foodstuff.id ]}, {}, id: "cboFoodstuff", class: "form-control", disabled: "" %>
     </div>
     <div class="form-group">
-      <%= f.label :additional_comment, "Information Additionnelle (par ex. Alergies)" %>
+      <%= f.label :additional_comment, "Information Additionnelle (par example: Allergies)" %>
       <%= f.text_area :additional_comment, id: "txtAdditionalComment", class: 'form-control', disabled: "" %>
     </div>
 

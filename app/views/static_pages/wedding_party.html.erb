@@ -1,12 +1,9 @@
 <%= render 'layouts/wedded_people_header' %>
-
-
 <div class="col-lg-6 col-lg-offset-3">
   <div class="bs-panel">
-
-    <%= render partial: 'party_member', :locals => {:include_border_top => false, :even => true, :name=>"Nathalie Diguer", :title => "Célébrant et tante de Cassandre", :pic_url => "https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97700&w=700&h=700"} %>
-    <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => false, :name=>"Pierre Diguer", :title => "Père de Cassandre", :pic_url => "https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97700&w=700&h=700"} %>
-    <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => true, :name=>"Genette St-Amant", :title => "Mère de Cassandre", :pic_url => "https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97700&w=700&h=700"} %>
+    <%= render partial: 'party_member', :locals => {:include_border_top => false, :even => true, :name=>"Nathalie Diguer", :title => "Célébrant et tante de Cassandre", :pic_url => "http://i.imgur.com/OHkVR15.jpg"} %>
+    <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => false, :name=>"Pierre Diguer", :title => "Père de Cassandre", :pic_url => "http://i.imgur.com/ZvieQ4U.jpg"} %>
+    <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => true, :name=>"Ginette St-Amant", :title => "Mère de Cassandre", :pic_url => "http://i.imgur.com/7nPhbFV.jpg"} %>
     <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => false, :name=>"Joanne &amp; Gilles Lalonde", :title => "Parents de Marie-Michèle", :pic_url => "http://s3.amazonaws.com/uploads.hitchedup.com/9fd9c580ab514bb59c146fd27e52d01c.jpeg"} %>
     <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => true, :name => "Catherine Lalonde", :title => "Dame d'honneur", :pic_url => "http://s3.amazonaws.com/uploads.hitchedup.com/aad9b3a8e3ee452f9e485373448d485d.jpeg"} %>
     <%= render partial: 'party_member', :locals => {:include_border_top => true, :even => false, :name => "Eve Diguer-St-Amant", :title => "Dame d'honneur", :pic_url => "http://s3.amazonaws.com/uploads.hitchedup.com/cc066d3e415145cf9b52e0789e64102e.jpeg"} %>

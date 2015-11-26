@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
-    <h1>Edit Invité</h1>
+    <h1>Modification d'un invité</h1>
 
     <%= form_for(@guest) do |f| %>
     <%= render 'shared/error_messages', obj: @guest %>
 
     <div class="form-group">
-      <%= f.label :full_name %>
+      <%= f.label :full_name, "Nom complet" %>
       <%= f.text_field :full_name, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :foodstuff %><br />
+      <%= f.label :foodstuff, "Choix de repas" %><br />
       <%= f.select :foodstuff_id, Foodstuff.all.collect {|foodstuff| [ foodstuff.foodstuff_name, foodstuff.id ]}, {}, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :additional_comment %>
+      <%= f.label :additional_comment, "Information Additionnelle (par example: Allergies)" %>
       <%= f.text_area :additional_comment, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :attending_ind %>
+      <%= f.label :attending_ind, "Présence confirmé?" %>
       <%= f.select :attending_ind, [['Oui', true], ['Non', false]], {}, class: 'form-control'%>
     </div>
     <%= f.submit "Sauvegarder", class: "btn btn-primary btn-block" %>
