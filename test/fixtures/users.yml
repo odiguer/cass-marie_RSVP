@@ -5,3 +5,9 @@ olivier:
   last_name: Diguer
   email: olivier.diguer@foodbar.com
   password_digest: <%= User.digest('password') %>
+
+ariane:
+  first_name: Ariane
+  last_name: Seguin
+  email: Ariane.Seguin@foodbar.com
+  password_digest: <%= User.digest('password') %>
