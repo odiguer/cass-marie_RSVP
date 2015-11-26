@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'summaries/index'
+
   root 'static_pages#home'
   get 'wedding_party' => 'static_pages#wedding_party'
   get 'event' => 'static_pages#event'
@@ -17,4 +19,7 @@ Rails.application.routes.draw do
       post 'locate'
     end
   end
+
+  resources:summaries, :only => [:index]
+  resources:users, :only => [:edit, :update]
 end
