@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   end
 
   resources:summaries, :only => [:index]
-  resources:users, :only => [:edit, :update]
+  resources:users, :except => [:show, :destroy]
 end

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Usagés</div>
+
+      <table class="table table-condensed table-striped">
+        <thead>
+          <th>Email</th>
+          <th>Nom</th>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= "#{user.first_name} #{user.last_name}" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="panel-footer">
+        <%= link_to "Nouvel Usagé", new_user_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

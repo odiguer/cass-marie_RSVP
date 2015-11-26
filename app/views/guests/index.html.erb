@@ -7,7 +7,8 @@
       <table class="table table-condensed table-striped">
         <thead>
           <th>Nom d'invité</th>
-          <th>Bouffe</th>
+          <th>Repas</th>
+          <th>Information Additionnelle</th>
           <th>Présence confirmé</th>
         </thead>
         <tbody>
@@ -15,6 +16,7 @@
           <tr>
             <td><%= link_to "#{guest.full_name}", edit_guest_path(guest) %></td>
             <td><%= guest.foodstuff.foodstuff_name if guest.foodstuff_id? %></td>
+            <td><%= check_box_tag "guest_ids[]", guest.id, !guest.additional_comment.blank?, {:id => "guest_id_#{guest.id}", :class => "checkbox", :disabled => ""} %></td>
             <td><%= check_box_tag "guest_ids[]", guest.id, guest.attending_ind?, {:id => "guest_id_#{guest.id}", :class => "checkbox", :disabled => ""} %></td>
           </tr>
           <% end %>

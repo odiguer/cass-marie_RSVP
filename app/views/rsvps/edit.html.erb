@@ -11,7 +11,7 @@ $(document).ready(function(){
       $('#cboFoodstuff').removeAttr('disabled');
       $('#txtAdditionalComment').removeAttr('disabled');
     }else{
-      $('#cboFoodstuff').attr('disabled', '');
+      $('#cboFoodstuff').attr('disabled', '').val('');
       $('#txtAdditionalComment').attr('disabled', '').text('');
     }
   }
@@ -26,7 +26,7 @@ $(document).ready(function(){
     <small class="text-center text-muted"><%= link_to "(Ceci n'est pas votre invitation? Clicker ici pour faire une nouvelle recherche)", find_rsvps_path %></small>
 
     <%= form_for(@guest, :url => rsvp_path(@guest)) do |f| %>
-    <%= render 'shared/error_messages', obj: @guest %>
+    <%= render 'shared/error_messages', obj: @guest, include_desc: false %>
 
     <div class="form-group">
       <%= f.label :attending_ind, "Allez vous assister a l'événement?" %>
@@ -34,7 +34,7 @@ $(document).ready(function(){
     </div>
     <div class="form-group">
       <%= f.label :foodstuff, "Choix de repas" %><br />
-      <%= f.select :foodstuff_id, Foodstuff.all.collect {|foodstuff| [ foodstuff.foodstuff_name, foodstuff.id ]}, {}, id: "cboFoodstuff", class: "form-control", disabled: "" %>
+      <%= f.select :foodstuff_id, Foodstuff.all.collect {|foodstuff| [ foodstuff.foodstuff_name, foodstuff.id ]}, { :include_blank => true }, id: "cboFoodstuff", class: "form-control", disabled: "" %>
     </div>
     <div class="form-group">
       <%= f.label :additional_comment, "Information Additionnelle (par example: Allergies)" %>

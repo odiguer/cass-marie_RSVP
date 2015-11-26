@@ -1,2 +1,37 @@
-<h1>Summaries#index</h1>
-<p>Find me in app/views/summaries/index.html.erb</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Sommaire</div>
+
+      <table class="table table-condensed table-bordered">
+        <tbody>
+          <!--  Group -->
+          <tr class="table-row-alternate">
+            <td colspan="2"><b>General:</b></td>
+          </tr>
+
+          <tr>
+            <td>Invités confirmer</td>
+            <td><%= @guests.where(:attending_ind => true).count %>/<%= @guests.count %></td>
+          </tr>
+
+          <tr>
+            <td>Invités confirmés avec de l'information additionnelle</td>
+            <td><%= @guests.where(:attending_ind => true).where.not(:additional_comment => "").count %></td>
+          </tr>
+          <!--  Group -->
+          <tr class="table-row-alternate">
+            <td colspan="2"><b>Repas:</b></td>
+          </tr>
+          <% @foodstuffs.each do |foodstuff| %>
+          <tr>
+            <td><%= foodstuff.foodstuff_name %></td>
+            <td><%= @guests.where(:foodstuff_id => foodstuff.id).count %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

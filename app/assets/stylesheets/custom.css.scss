@@ -182,6 +182,10 @@ html, body, .container-fluid {
   color:#d9534f !important;
 }
 
+.table > tbody > tr.table-row-alternate {
+  background-color: #f9f9f9;
+}
+
 #error_summary {
   color: red;
   ul {
