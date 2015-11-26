@@ -25,6 +25,7 @@ class RsvpsController < ApplicationController
 
   def update
     @guest = Guest.find(params[:id])
+
     if @guest.update_attributes(user_params)
       flash[:success] = "Votre RSVP a été mis à jour. Merci"
       redirect_to action: :find

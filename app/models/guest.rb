@@ -3,10 +3,13 @@ class Guest < ActiveRecord::Base
   validates(:foodstuff_id, :presence => true, :if => "attending_ind?")
   belongs_to :foodstuff
 
-  # @todo: get back to this shit. titleize replaces hyphens with spaces...
-  # before_save :titleize_case
-  # private
-  # def titleize_case
-  #   self.full_name = full_name.titleize
-  # end
+  before_save :update_attending_ind!
+  private
+  def update_attending_ind!
+    if !self.attending_ind
+      self.foodstuff_id = nil
+      self.additional_comment = nil
+    end
+  end
+
 end
