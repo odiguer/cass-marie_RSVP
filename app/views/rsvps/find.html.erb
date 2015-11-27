@@ -1,9 +1,15 @@
 <%= render 'layouts/wedded_people_header' %>
 
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#txtRSVPTxt').popover();
+});
+</script>
+
 <div class="row vertical-center-row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 home-title-area">
 
-    <p class="site-tagline text-cente"> Entré le nom sur votre invitation</p>
+    <p class="site-tagline text-cente">Entrez le nom sur votre invitation</p>
 
     <%= form_tag locate_rsvps_path do %>
     <div class="input-group">
@@ -14,5 +20,9 @@
     </div>
     <% end %>
 
+    <% helpContent = 'Chaque personne incluse sur l\'invitation doit remplir et soumettre un RSVP.'%>
+    <small class="text-right">
+      <u id="txtRSVPTxt" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="<%= helpContent %>">Information additionnelle</u>
+    </small>
   </div>
 </div>
