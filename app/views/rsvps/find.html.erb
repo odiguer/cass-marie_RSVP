@@ -13,14 +13,14 @@ $(document).ready(function(){
 
     <%= form_tag locate_rsvps_path do %>
     <div class="input-group">
-      <%= text_field_tag "rsvp_name_query", nil, class:"form-control input", placeholder: "par example: Jane Doe", required: true %>
+      <%= text_field_tag "rsvp_name_query", nil, class:"form-control input", placeholder: "par exemple: Jane Doe", required: true %>
       <span class="input-group-btn">
         <button type="submit" class="btn btn-default">Trouver RSVP</button>
       </span>
     </div>
     <% end %>
 
-    <% helpContent = 'Chaque personne incluse sur l\'invitation doit remplir et soumettre un RSVP.'%>
+    <% helpContent = 'Chaque personne dont le nom est inscrit sur l\'invitation doit remplir et soumettre individuellement un RSVP.'%>
     <small class="text-right">
       <u id="txtRSVPTxt" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="<%= helpContent %>">Information additionnelle</u>
     </small>
