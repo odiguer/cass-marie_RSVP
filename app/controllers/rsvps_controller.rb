@@ -10,7 +10,7 @@ class RsvpsController < ApplicationController
       return render 'find'
     end
 
-    @guests = Guest.where("unaccent(lower(full_name)) LIKE ?", "%#{params[:rsvp_name_query].downcase}%")
+    @guests = Guest.where("unaccent(lower(full_name)) LIKE ?", "%#{I18n.transliterate(params[:rsvp_name_query].downcase)}%")
     if @guests.length > 0
       redirect_to action: :edit, id: @guests[0].id
     else
